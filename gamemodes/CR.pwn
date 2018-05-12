@@ -35869,7 +35869,7 @@ command(vendercasa, playerid, params[])
 	return 1;
 }
 
-// mis comandos 
+// saber posicion del PJ //
 command(posicion,playerid, params[]){
         new Float: x, Float: y, Float: z, pos[256];
         GetPlayerPos(playerid, x, y, z);
@@ -35878,34 +35878,6 @@ command(posicion,playerid, params[]){
 		return 1;
 }
 
-command(teleport,playerid, params[]){
-	 new Float:X, Float:Y, Float:Z;
-	if(papilla[playerid] == 0) return SendClientMessageEx(playerid, COLOR_GRAD2, "{FFFF00}[ERROR]:{FFFFFF} No estás en servicio administrativo {00F70C}/adminduty o /adminoffduty{FFFFFF} para usar este comando.");
-	if (Info[playerid][pAdminZC] >= 1000)
-	{
-	   SetPlayerPos(playerid,POSICION:X,POSICION:Y,POSICION:Z);
-	   SendClientMessage(playerid, COLOR_GRAD2, "¡Bienvenido eres un cheto!");   
-    }
-    else SendClientMessageEx(playerid, COLOR_WHITE, "No estás autorizado para usar este comando.");
-     return 1;
-}
-command(hacerpolicia2, playerid, params[]){
-    if(papilla[playerid] == 0) return SendClientMessageEx(playerid, COLOR_GRAD2, "{FFFF00}[ERROR]:{FFFFFF} No estás en servicio administrativo {00F70C}/adminduty o /adminoffduty{FFFFFF} para usar este comando.");
-	   new giveplayerid;
-        if(Info[playerid][pAdminZC] < 2) return SendClientMessageEx(playerid, COLOR_GRAD2, "{FFFF00}[ERROR]:{FFFFFF} No tienes autorización a usar este comando.");
-        if(!sscanf(params, "d", giveplayerid)){
-			new Float:slx, Float:sly, Float:slz, string[128];
-			if(IsPlayerConnected(giveplayerid)){
-			    GetPlayerPos(giveplayerid, slx, sly, slz);
-				SetPlayerPos(giveplayerid, slx, sly, slz+5);
-				PlayerPlaySound(giveplayerid, 1130, slx, sly, slz+5);
-				format(string, sizeof(string), "{FFFF00}[AdmCmd]:{FF0000} %s golpeó a %s",GetPlayerNameEx(playerid),GetPlayerNameEx(giveplayerid));
-				ABroadCast(COLOR_GENERAL,string,2);
-				return SendClientMessageEx(giveplayerid, COLOR_RED2, string);
-			} else SendClientMessageEx(playerid, COLOR_WHITE, "Esa ID es inválida.");
-		} else SendClientMessageEx(playerid, COLOR_WHITE, "Utiliza: /slap (PlayerID)");
-        return 1;
-    }
 
 command(hacerpolicia, playerid, params[])
 {
