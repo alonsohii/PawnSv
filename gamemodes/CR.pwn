@@ -5,6 +5,7 @@
 //Creditos Gamemode/Base: Actividad Roleplay 2.1
 //Meses ON: unos 4
 //Récord de usuarios: 60/70
+// este es un comentario no esta en el codigo
 //********************Californias Roleplay 2.0 ************************//
 #include <RobosGR>
 #include <a_samp>
