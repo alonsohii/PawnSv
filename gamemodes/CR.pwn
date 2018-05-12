@@ -27,6 +27,7 @@
 #include <zcmd>
 static gTeam[MAX_PLAYERS];
 /* bae de datos */
+/* mario cambio */
 #define SQL_HOST "localhost"
 #define SQL_USER "root"
 #define SQL_PASS ""
