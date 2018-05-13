@@ -11661,9 +11661,9 @@ function PlayerLogin(playerid,isnew)
 
 	if(isnew){
 		 Info[playerid][pCash] = 25000;
-		 if(Info[giveplayerid][pSex] == 1)
+		 if(Info[playerid][pSex] == 1)
 		 {
-		 	Info[giveplayerid][pChar] = 250;
+		 	Info[playerid][pChar] = 250;
 			SetPlayerSkin(playerid, Info[playerid][pChar]);
 
 		 }
