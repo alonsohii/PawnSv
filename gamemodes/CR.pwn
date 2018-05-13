@@ -4176,11 +4176,13 @@ new model = GetVehicleModel( vehicleid );
 	}
 	return 1;
 }
-
+// permisos
 Team_LSPD(playerid){
 	if(IsPlayerConnected(playerid)){
+		if(PermisoGeneral(playerid)) {return 1;}
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+
 	    if(member	==	1){
 		    return 1;
 		}
@@ -4198,6 +4200,7 @@ Team_FBI(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	2)
 		{
 		    return 1;
@@ -4216,6 +4219,7 @@ Team_SAEM(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	3)
 		{
 		    return 1;
@@ -4234,6 +4238,7 @@ Team_SAMD(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	4)
 		{
 		    return 1;
@@ -4252,6 +4257,7 @@ Team_LSTV(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	5)
 		{
 		    return 1;
@@ -4270,6 +4276,7 @@ Team_Mecanicos(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	6)
 		{
 		    return 1;
@@ -4288,6 +4295,7 @@ Gobierno(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	7)
 		{
 		    return 1;
@@ -4306,6 +4314,7 @@ Hitman(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	8)
 		{
 		    return 1;
@@ -4324,6 +4333,7 @@ Team_Judicial(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	9)
 		{
 		    return 1;
@@ -4341,6 +4351,7 @@ Team_Groove(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
+       if(PermisoGeneral(playerid)) {return 1;}
        if(member==10)
        {
            return 1;
@@ -4358,6 +4369,7 @@ Team_Ballas(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
+       if(PermisoGeneral(playerid)) {return 1;}
        if(member==11)
        {
            return 1;
@@ -4375,6 +4387,7 @@ Team_Latin(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
+       if(PermisoGeneral(playerid)) {return 1;}
        if(member==12)
        {
            return 1;
@@ -4392,6 +4405,7 @@ Team_Sureno(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
+       if(PermisoGeneral(playerid)) {return 1;}
        if(member==13)
        {
            return 1;
@@ -4409,6 +4423,7 @@ Team_Rusa(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	14)
 		{
 		    return 1;
@@ -4426,6 +4441,7 @@ Team_LCN(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	== 15)
 		{
 		    return 1;
@@ -4443,6 +4459,7 @@ Team_Yakuza(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	16)
 		{
 		    return 1;
@@ -4460,6 +4477,7 @@ Presidente(playerid)
 	if(IsPlayerConnected(playerid))
 	{
 	    new leader = Info[playerid][pLeader];
+	    if(PermisoGeneral(playerid)) {return 1;}
 		if(leader == 7)
 		{
 		    return 1;
@@ -4468,10 +4486,16 @@ Presidente(playerid)
 	return 0;
 }
 
+PermisoGeneral(playerid)
+{
+	if(Info[playerid][pAdminZC] > 4999){ return 1; }else{ return 0;}
+}
+
 Team_CIA(playerid){
 	if(IsPlayerConnected(playerid)){
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	17){
 		    return 1;
 		}
@@ -4489,6 +4513,7 @@ Team_Santana(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	18)
 		{
 		    return 1;
@@ -4506,6 +4531,7 @@ Team_Alqaeda(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	== 19)
 		{
 		    return 1;
@@ -4523,6 +4549,7 @@ IsACop(playerid)  // function cop
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	1 || member	==	2 || member	==	3 || member == 17)
 		{
 		    return 1;
@@ -4541,6 +4568,7 @@ IsAPolice(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member==1)
 		{
 		    return 1;
@@ -4559,6 +4587,7 @@ IsACia(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
+	    if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	17)
 		{
 		    return 1;
