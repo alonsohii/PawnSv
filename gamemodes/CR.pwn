@@ -7063,7 +7063,9 @@ function GateClosepeajelv2()
 	RotateObject(peajelv,2.00000,91.00000,339.00000,90,100);
 	return 1;
 }
-//**************************************
+
+
+//************************************** 
 SetPlayerSpawn(playerid)
 {
 	if(IsPlayerConnected(playerid))
@@ -10905,7 +10907,14 @@ public OnGameModeInit()
 	CreateDynamic3DTextLabel("[JOB] Granjero.\n{FFFFFF}Usa /unirse",			                                                 COLOR_LIGHTBLUE, -382.2627,-1426.3954,26.1396+0.6,8.0,INVALID_PLAYER_ID,INVALID_VEHICLE_ID,1,0,0);// granjero
 	CreateDynamic3DTextLabel("[LSPD] Puerta.\n{FFFFFF}Usa /porton para abrir",	  COLOR_LIGHTBLUE, 1545.7398681641, -1627.7280273438, 15.206203460693+0.6,8.0);// Porton exterior
 	CreateDynamic3DTextLabel("[LSPD] Puerta.\n{FFFFFF}Usa /porton para abrir",	  COLOR_LIGHTBLUE, 1589.053344,-1638.123168,14.122960+0.6,8.0);// Porton exterior
-	
+    
+    //Peaje LV, ls
+	CreateDynamic3DTextLabel("[Gobierno] Puerta.\n{FFFFFF}Usa /peaje para abrir y pagar la cuota correspondiente",	  COLOR_LIGHTBLUE, 2.00000,91.00000,339.00000,90+0.5,100);// peaje
+	CreateDynamic3DTextLabel("[Gobierno] Puerta.\n{FFFFFF}Usa /peaje para abrir y pagar la cuota correspondiente",	  COLOR_LIGHTBLUE, 0.00000,-89.00000,339.00000,90+0.5,100);// peaje
+	CreateDynamic3DTextLabel("[Gobierno] Puerta.\n{FFFFFF}Usa /peaje para abrir y pagar la cuota correspondiente",	  COLOR_LIGHTBLUE, 0.00, 90.00, -95.16,90+0.5,100);// peaje
+	CreateDynamic3DTextLabel("[Gobierno] Puerta.\n{FFFFFF}Usa /peaje para abrir y pagar la cuota correspondiente",	  COLOR_LIGHTBLUE, 0.00, -90.00, -95.46,90+0.5,100);// peaje
+
+
 	//BAnco Tarjeta Credito
 	CreateDynamic3DTextLabel("Para registrar tu cuenta\nen el Banco Los Santos\n{FFFFFF}Usa /sacartarjeta",             COLOR_LIGHTBLUE, 985.7003, -1171.2474, 24.9037+0.6,4.0); // Banco LS
 	// Mapa de interes.
