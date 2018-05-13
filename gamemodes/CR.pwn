@@ -31307,6 +31307,15 @@ command(vermapa, playerid, params[]){
 		else SendClientMessage(playerid, 0xFFFF00FF, "No estás conectado.");
 		return 1;
 	}
+command(mapa, playerid, params[]){
+      
+        if(IsPlayerConnected(playerid))
+        {
+	 		SafeDialogEx(playerid, MAPINTERES, DIALOG_STYLE_LIST, "{FFFFFF}Mapa de{088A4B} Los Santos","Concesionario Grotti\nBanco LS\nHospital de los Santos\nAyuntamiento de los Santos\n24/7 Unity\n24/7 Ayuntamiento\nDiscoteca Alhambra\nPizzeria\nTienda Electronica\nMuebleria", "Ok", "Cancelar");
+		}
+		else SendClientMessage(playerid, 0xFFFF00FF, "No estás conectado.");
+		return 1;
+}
 command(gps, playerid, params[])
 {
 	new vstring[1024];
@@ -36112,7 +36121,7 @@ command(ayudamecanicos, playerid, params[])
        		
 command(ayudame, playerid, params[])
 {
-   ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}Ayuda General", "{FFFF00}/ayuda (Ayuda General), (Otras ayudas) /ayudamedico /ayudamecanicos /ayudateams /ayudagobierno /ayudajudicial /ayudapolicia /ayudahitman", "Cerrar", "");
+   ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}Ayuda General", "{FFFF00}/ayuda (Ayuda General), (Otras ayudas) /ayudamedico /ayudamecanicos /ayudateams /ayudagobierno /ayudajudicial /ayudapolicia /ayudahitman /mapa (Para ver ubicaciones) ,/buscartrabajo (Para buscar donde trabajar)", "Cerrar", "");
     return 1;
 }
 
