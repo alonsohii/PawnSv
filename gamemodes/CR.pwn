@@ -10502,7 +10502,7 @@ public OnGameModeInit()
 	}
 	//************************************** Autos de facciones **************************************
 	//San Andreas Police Departament Cars
-	SAPDVehicles[0] = AddStaticVehicleEx(596,1601.872924,-1704.370971,5.612636,89.574440,1,0,TIME_RESPAWN); // Patrulla LS   	1 //596
+	/*SAPDVehicles[0] = AddStaticVehicleEx(596,1601.872924,-1704.370971,5.612636,89.574440,1,0,TIME_RESPAWN); // Patrulla LS   	1 //596
 	SAPDVehicles[1] = AddStaticVehicleEx(596,1601.902221,-1700.465332,5.634525,89.566131,1,0,TIME_RESPAWN); // Patrulla LS   	2 // 596
 	SAPDVehicles[2] = AddStaticVehicleEx(596,1601.933105,-1696.409912,5.642260,89.562606,0,1,TIME_RESPAWN); // Patrulla LS   	3 596/
 	SAPDVehicles[3] = AddStaticVehicleEx(596,1601.963134,-1692.478881,5.656129,89.555740,0,1,TIME_RESPAWN); // Patrulla LS   	4 //569
@@ -10538,7 +10538,7 @@ public OnGameModeInit()
 	SAPDVehicles[33] = AddStaticVehicleEx(596,634.9767,-610.3834,16.0564,358.8744,57,1,TIME_RESPAWN);
 	SAPDVehicles[34] = AddStaticVehicleEx(523,627.3511,-610.7618,16.1863,357.9838,57,1,TIME_RESPAWN);
 	SAPDVehicles[35] = AddStaticVehicleEx(599,613.5255,-601.5044,16.9491,269.6267,57,1,TIME_RESPAWN);
-	SAPDVehicles[36] = AddStaticVehicleEx(599,613.0554,-597.0876,16.9540,269.1958,57,1,TIME_RESPAWN);
+	SAPDVehicles[36] = AddStaticVehicleEx(599,613.0554,-597.0876,16.9540,269.1958,57,1,TIME_RESPAWN);*/
 	//FBI
 	FBIVehicle[0] = AddStaticVehicleEx(421,281.64566040,-1531.28723145,24.54375076,233.99731445,0,0,TIME_RESPAWN); //Elegant
 	FBIVehicle[1] = AddStaticVehicleEx(421,284.66522217,-1526.72875977,24.54375076,235.99731445,0,0,TIME_RESPAWN); //Elegant
