@@ -5,7 +5,6 @@
 //Creditos Gamemode/Base: Actividad Roleplay 2.1
 //Meses ON: unos 4
 //Récord de usuarios: 60/70
-// este es un comentario no esta en el codigo
 //********************Californias Roleplay 2.0 ************************//
 #include <RobosGR>
 #include <a_samp>
@@ -10225,7 +10224,7 @@ AntiDeAMX()
 public OnGameModeInit()
 {
 
-	mysql_connect(SQL_HOST, SQL_USER, SQL_DATA, SQL_PASS);
+
 
     AntiDeAMX();
 	SendRconCommand("onfoot_rate 40");
@@ -11657,10 +11656,20 @@ function PlayerLogin(playerid,isnew)
 	CurrentMoney[playerid] = GetPVarInt(playerid, "Cash");
 	HideMenuLogin(playerid);
 	print("EXE:validacion isnew;");
+
+	SetPlayerSkin(playerid, Info[playerid][pChar]);
+
 	if(isnew){
-		 Info[playerid][pCash] = 10000;
-		 print("Entro y le asigno 10000;");
+		 Info[playerid][pCash] = 25000;
+		 if(Info[giveplayerid][pSex] == 1)
+		 {
+		 	Info[giveplayerid][pChar] = 250;
+			SetPlayerSkin(playerid, Info[playerid][pChar]);
+
+		 }
 	}
+
+
 	if(Info[playerid][pLvlAdminZC] > 0)
 	{
 	    Info[playerid][pLvlAdminZC] = 0;
@@ -25476,7 +25485,7 @@ command(aceptararma, playerid, params[]){
 		return 1;
 	}
 
-command(c, playerid, params[]){
+command(cargos, playerid, params[]){
 	new string[170];
 	if(!IsACop(playerid)) return SendClientMessageEx(playerid, COLOR_WHITE, "No puedes usar este comando.");
 	if(OnDuty[playerid] == 0 && IsACop(playerid)) return  SendClientMessageEx(playerid, COLOR_WHITE, "No estas en servicio.");
@@ -28865,7 +28874,7 @@ command(carcel, playerid, params[]){
 		SetPlayerChatBubble(playerid,string,COLOR_RED,60.0,5000);
 		return 1;
 	}
-    command(cargos, playerid, params[])
+    command(c, playerid, params[])
     {
         if(Muted[playerid] == 1) return	SendClientMessageEx(playerid, TEAM_CYAN_COLOR, "* No puedes hablar estás silenciado.");
 		if(!gPlayerLogged{playerid}) return SendClientMessageEx(playerid, COLOR_WHITE, "No estás logueado.");
@@ -35869,15 +35878,44 @@ command(vendercasa, playerid, params[])
 	return 1;
 }
 
-// saber posicion del PJ //
+// mis comandos 
 command(posicion,playerid, params[]){
         new Float: x, Float: y, Float: z, pos[256];
         GetPlayerPos(playerid, x, y, z);
 		format(pos,sizeof(pos),"X: %f Y: %f Z: %f",x,y,z);
+        printf("Posicion: %i.", pos);
         SendClientMessage(playerid, -1, pos);
 		return 1;
 }
 
+command(teleport,playerid, params[]){
+	 new Float:X, Float:Y, Float:Z;
+	if(papilla[playerid] == 0) return SendClientMessageEx(playerid, COLOR_GRAD2, "{FFFF00}[ERROR]:{FFFFFF} No estás en servicio administrativo {00F70C}/adminduty o /adminoffduty{FFFFFF} para usar este comando.");
+	if (Info[playerid][pAdminZC] >= 1000)
+	{
+	   SetPlayerPos(playerid,POSICION:X,POSICION:Y,POSICION:Z);
+	   SendClientMessage(playerid, COLOR_GRAD2, "¡Bienvenido eres un cheto!");   
+    }
+    else SendClientMessageEx(playerid, COLOR_WHITE, "No estás autorizado para usar este comando.");
+     return 1;
+}
+command(hacerpolicia2, playerid, params[]){
+    if(papilla[playerid] == 0) return SendClientMessageEx(playerid, COLOR_GRAD2, "{FFFF00}[ERROR]:{FFFFFF} No estás en servicio administrativo {00F70C}/adminduty o /adminoffduty{FFFFFF} para usar este comando.");
+	   new giveplayerid;
+        if(Info[playerid][pAdminZC] < 2) return SendClientMessageEx(playerid, COLOR_GRAD2, "{FFFF00}[ERROR]:{FFFFFF} No tienes autorización a usar este comando.");
+        if(!sscanf(params, "d", giveplayerid)){
+			new Float:slx, Float:sly, Float:slz, string[128];
+			if(IsPlayerConnected(giveplayerid)){
+			    GetPlayerPos(giveplayerid, slx, sly, slz);
+				SetPlayerPos(giveplayerid, slx, sly, slz+5);
+				PlayerPlaySound(giveplayerid, 1130, slx, sly, slz+5);
+				format(string, sizeof(string), "{FFFF00}[AdmCmd]:{FF0000} %s golpeó a %s",GetPlayerNameEx(playerid),GetPlayerNameEx(giveplayerid));
+				ABroadCast(COLOR_GENERAL,string,2);
+				return SendClientMessageEx(giveplayerid, COLOR_RED2, string);
+			} else SendClientMessageEx(playerid, COLOR_WHITE, "Esa ID es inválida.");
+		} else SendClientMessageEx(playerid, COLOR_WHITE, "Utiliza: /slap (PlayerID)");
+        return 1;
+    }
 
 command(hacerpolicia, playerid, params[])
 {
@@ -36033,6 +36071,51 @@ command(hacermod, playerid, params[])
 
     return 1;
 }
+command(ayudateams, playerid, params[])
+{
+
+     ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "Comandos disponibles para la faccion LCN:\n{FFFFFF}/equipo /robar /miembros /f  /robarbanco (Solo-Líder)\n\n{FFFF00}Informacion:\n{FFFFFF}*Tener skins que representen la facción.\n*Evitar incumplir los conceptos de rol\n- Usa (Y) Para abrir las puertas", "Cerrar", "");
+
+    return 1;
+}
+
+command(ayudamedico, playerid, params[])
+{
+   ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}SAMD", "{FFFF00}Comandos disponibles para la faccion SAMD:\n{FFFFFF}/equipo /gob /sacarsangre /pcinfo /samduty /placa (/r)adio (/d)epartaments\n/subirpt /dejarpt /curar /irpt - Usa (Y) Para abrir las puertas.", "Cerrar", "");
+   return 1;
+}
+
+command(ayudagobierno, playerid, params[])
+{
+	ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}Gobierno", "{FFFF00}Comandos disponibles para la faccion Gobierno:\n{FFFFFF}/miembros /equipo /gob /impuesto\n/dejarfondos /gobdiv /d /(r)adio - Usa (Y) Para abrir las puertas.", "Cerrar", "");
+    return 1;
+}
+
+command(ayudajudicial, playerid, params[])
+{
+     ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}Sistema Judicial", "{FFFF00}Comandos disponibles para la faccion Judicial:\n{FFFFFF}/miembros (/r)adio /d /orden /qorden\n/multajudicial /scarcel /sprision /buscados /juicio\n/librarcargos /recompensar /verjuicios /revertir /presentar /arrestojudicial", "Cerrar", "");
+     return 1;
+}
+
+command(ayudahitman, playerid, params[])
+{
+	ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}Agencia Hitman", "{FFFF00}Comandos disponibles para la faccion Hitman:\n{FFFFFF}/miembros /buscar /acontrato /amascara\n/darhit /hrangos /borrarhit /equipo /hits", "Cerrar", "");
+	return 1;
+}
+
+command(ayudamecanicos, playerid, params[])
+{
+	ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}Crazy Motors", "{FFFF00}Comandos disponibles para la faccion Crazy Motors:\n{FFFFFF}/miembros /menu /mduty /nitro /hyd \n/venderspray /remolcar /reparar /recargar /f\n/equipo - Usa (Y) Para abrir las puertas.", "Cerrar", "");
+    return 1;
+}
+  
+       		
+command(ayudame, playerid, params[])
+{
+   ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "{00F70C}Ayuda General", "{FFFF00}/ayuda (Ayuda General), (Otras ayudas) /ayudamedico /ayudamecanicos /ayudateams /ayudagobierno /ayudajudicial /ayudapolicia /ayudahitman", "Cerrar", "");
+    return 1;
+}
+
 command(goinhouse, playerid, params[])
 {
     if(papilla[playerid] == 0) return SendClientMessageEx(playerid, COLOR_GRAD2, "{FFFF00}[ERROR]:{FFFFFF} No estás en servicio administrativo {00F70C}/adminduty o /adminoffduty{FFFFFF} para usar este comando.");
@@ -39360,11 +39443,12 @@ command(toy, playerid, params[])
 	}
 	return 1;
 }
+
 command(esposar, playerid, params[])
 {
 if(IsACop(playerid))
 {
-if(GetPVarInt(playerid, "Injured") == 1) return SendClientMessageEx(playerid, COLOR_WHITE, "No puedes hacer esto ahora.");
+if(GetPVarInt(playerid, "Injured") == 1) return SendClientMessageEx(playerid, COLOR_WHITE, "No puedes hacer esto ahora va contra los derechos humanos.");
 new string[170],
 Float:Pos[3],
 giveplayerid;
@@ -39376,6 +39460,8 @@ if (ProxDetectorS(8.0, playerid, giveplayerid))
 if(giveplayerid == playerid) return SendClientMessageEx(playerid, COLOR_WHITE, "{FFFF00}[ERROR]:{FFFFFF} No puedes hacer esto contigo mismo.");
 if(Info[giveplayerid][pEstado] == 1 || GetPlayerSpecialAction(giveplayerid) == SPECIAL_ACTION_HANDSUP)
 {
+
+
 format(string, sizeof(string), "[Radio de policía] {FFFFFF}(Oficial %s) dice: hemos esposado a {00D2CF}%s, {FFFFFF}se decidirá su arresto.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 SendRadioMessage(1, TEAM_BLUE_COLOR, string);
 format(string, sizeof(string), "Fuiste esposado por %s.", GetPlayerNameEx(playerid));
@@ -39458,11 +39544,25 @@ command(detener, playerid, params[])
 			if (ProxDetectorS(8.0, playerid, giveplayerid))
 			{
 				if(giveplayerid == playerid) { SendClientMessageEx(playerid, COLOR_GREY, "{FFFF00}[ERROR]:{FFFFFF} No puedes hacer esto contigo mismo!"); return 1; }
+
+				if(GetPVarInt(giveplayerid, "Injured") == 1)
+				{
+							//format(string, sizeof(string), " Has revivido a %s.", GetPlayerNameEx(giveplayerid));
+					SendClientMessageEx(playerid, COLOR_WHITE, string);
+					Info[giveplayerid][pEstado]= 2;// forzando esposado
+					SendClientMessageEx(giveplayerid, COLOR_WHITE, "Arriba! seras llevado a la enfermeria de SAPD pero igualmente seras arrestado.");
+					KillEMSQueue(giveplayerid);
+					ClearAnimations(giveplayerid);
+					SetPlayerWeapons(giveplayerid);
+					SetHP(giveplayerid, 1);
+				}
+
 				if(Info[giveplayerid][pEstado] == 2)
 				{
 					new carid = gLastCar[playerid];
 					if(IsSeatAvailable(carid, seat))
 					{
+
 						new Float:pos[6];
 						GetPlayerPos(playerid, pos[0], pos[1], pos[2]);
 						GetPlayerPos(giveplayerid, pos[3], pos[4], pos[5]);
