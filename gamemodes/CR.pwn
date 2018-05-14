@@ -4179,7 +4179,7 @@ new model = GetVehicleModel( vehicleid );
 // permisos
 Team_LSPD(playerid){
 	if(IsPlayerConnected(playerid)){
-		if(PermisoGeneral(playerid)) {return 1;}
+		// // if(PermisoGeneral(playerid)) {return 1;}
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
 
@@ -4200,7 +4200,7 @@ Team_FBI(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	2)
 		{
 		    return 1;
@@ -4219,7 +4219,7 @@ Team_SAEM(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	3)
 		{
 		    return 1;
@@ -4238,7 +4238,7 @@ Team_SAMD(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	4)
 		{
 		    return 1;
@@ -4257,7 +4257,7 @@ Team_LSTV(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	5)
 		{
 		    return 1;
@@ -4276,7 +4276,7 @@ Team_Mecanicos(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	6)
 		{
 		    return 1;
@@ -4295,7 +4295,7 @@ Gobierno(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	7)
 		{
 		    return 1;
@@ -4314,7 +4314,7 @@ Hitman(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	8)
 		{
 		    return 1;
@@ -4333,7 +4333,7 @@ Team_Judicial(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	9)
 		{
 		    return 1;
@@ -4351,7 +4351,7 @@ Team_Groove(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
-       if(PermisoGeneral(playerid)) {return 1;}
+       // // if(PermisoGeneral(playerid)) {return 1;}
        if(member==10)
        {
            return 1;
@@ -4369,7 +4369,7 @@ Team_Ballas(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
-       if(PermisoGeneral(playerid)) {return 1;}
+       // // if(PermisoGeneral(playerid)) {return 1;}
        if(member==11)
        {
            return 1;
@@ -4387,7 +4387,7 @@ Team_Latin(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
-       if(PermisoGeneral(playerid)) {return 1;}
+       // // if(PermisoGeneral(playerid)) {return 1;}
        if(member==12)
        {
            return 1;
@@ -4405,7 +4405,7 @@ Team_Sureno(playerid)
    {
        new leader = Info[playerid][pLeader];
        new member = Info[playerid][pMember];
-       if(PermisoGeneral(playerid)) {return 1;}
+       // // if(PermisoGeneral(playerid)) {return 1;}
        if(member==13)
        {
            return 1;
@@ -4423,7 +4423,7 @@ Team_Rusa(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	14)
 		{
 		    return 1;
@@ -4441,7 +4441,7 @@ Team_LCN(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	== 15)
 		{
 		    return 1;
@@ -4459,7 +4459,7 @@ Team_Yakuza(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	16)
 		{
 		    return 1;
@@ -4477,7 +4477,7 @@ Presidente(playerid)
 	if(IsPlayerConnected(playerid))
 	{
 	    new leader = Info[playerid][pLeader];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 		if(leader == 7)
 		{
 		    return 1;
@@ -4495,7 +4495,7 @@ Team_CIA(playerid){
 	if(IsPlayerConnected(playerid)){
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	17){
 		    return 1;
 		}
@@ -4513,7 +4513,7 @@ Team_Santana(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	18)
 		{
 		    return 1;
@@ -4531,7 +4531,7 @@ Team_Alqaeda(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	== 19)
 		{
 		    return 1;
@@ -4549,7 +4549,7 @@ IsACop(playerid)  // function cop
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	1 || member	==	2 || member	==	3 || member == 17)
 		{
 		    return 1;
@@ -4568,7 +4568,7 @@ IsAPolice(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member==1)
 		{
 		    return 1;
@@ -4587,7 +4587,7 @@ IsACia(playerid)
 	{
 	    new leader = Info[playerid][pLeader];
 	    new member = Info[playerid][pMember];
-	    if(PermisoGeneral(playerid)) {return 1;}
+	    // // if(PermisoGeneral(playerid)) {return 1;}
 	    if(member	==	17)
 		{
 		    return 1;
@@ -10502,7 +10502,7 @@ public OnGameModeInit()
 	}
 	//************************************** Autos de facciones **************************************
 	//San Andreas Police Departament Cars
-	/*SAPDVehicles[0] = AddStaticVehicleEx(596,1601.872924,-1704.370971,5.612636,89.574440,1,0,TIME_RESPAWN); // Patrulla LS   	1 //596
+	SAPDVehicles[0] = AddStaticVehicleEx(596,1601.872924,-1704.370971,5.612636,89.574440,1,0,TIME_RESPAWN); // Patrulla LS   	1 //596
 	SAPDVehicles[1] = AddStaticVehicleEx(596,1601.902221,-1700.465332,5.634525,89.566131,1,0,TIME_RESPAWN); // Patrulla LS   	2 // 596
 	SAPDVehicles[2] = AddStaticVehicleEx(596,1601.933105,-1696.409912,5.642260,89.562606,0,1,TIME_RESPAWN); // Patrulla LS   	3 596/
 	SAPDVehicles[3] = AddStaticVehicleEx(596,1601.963134,-1692.478881,5.656129,89.555740,0,1,TIME_RESPAWN); // Patrulla LS   	4 //569
@@ -10538,7 +10538,7 @@ public OnGameModeInit()
 	SAPDVehicles[33] = AddStaticVehicleEx(596,634.9767,-610.3834,16.0564,358.8744,57,1,TIME_RESPAWN);
 	SAPDVehicles[34] = AddStaticVehicleEx(523,627.3511,-610.7618,16.1863,357.9838,57,1,TIME_RESPAWN);
 	SAPDVehicles[35] = AddStaticVehicleEx(599,613.5255,-601.5044,16.9491,269.6267,57,1,TIME_RESPAWN);
-	SAPDVehicles[36] = AddStaticVehicleEx(599,613.0554,-597.0876,16.9540,269.1958,57,1,TIME_RESPAWN);*/
+	SAPDVehicles[36] = AddStaticVehicleEx(599,613.0554,-597.0876,16.9540,269.1958,57,1,TIME_RESPAWN);
 	//FBI
 	FBIVehicle[0] = AddStaticVehicleEx(421,281.64566040,-1531.28723145,24.54375076,233.99731445,0,0,TIME_RESPAWN); //Elegant
 	FBIVehicle[1] = AddStaticVehicleEx(421,284.66522217,-1526.72875977,24.54375076,235.99731445,0,0,TIME_RESPAWN); //Elegant
@@ -11695,14 +11695,14 @@ function PlayerLogin(playerid,isnew)
 	HideMenuLogin(playerid);
 	print("EXE:validacion isnew;");
 
-	SetPlayerSkin(playerid, Info[playerid][pChar]);
+	SetPlayerSkin(playerid, Info[playerid][pgskin]);
 
 	if(isnew){
 		 Info[playerid][pCash] = 25000;
 		 if(Info[playerid][pSex] == 1)
 		 {
-		 	Info[playerid][pChar] = 250;
-			SetPlayerSkin(playerid, Info[playerid][pChar]);
+		 	//Info[playerid][pChar] = 250;
+			SetPlayerSkin(playerid, 250);
 
 		 }
 	}
@@ -45981,7 +45981,7 @@ public OnPlayerCommandReceived(playerid, cmdtext[])
 
 public OnPlayerCommandPerformed(playerid, cmdtext[], success)
 {
-    if(!success) SendClientMessage(playerid, COLOR_WHITE, "{FF0000}Algo salió mal: {FFFFFF}El comando que has solicitado no existe o lo has ingresado mal, {FF0000}/ayuda{FFFFFF}.");
+    if(!success) SendClientMessage(playerid, COLOR_WHITE, "{FF0000}Algo salió mal: {FFFFFF}No existe este comando usa, {FF0000}/ayudame o /ayuda{FFFFFF}.");
 	return 1;
 }
 
@@ -48741,6 +48741,7 @@ function ShowRol(playerid)
 	        }
 	        case 10:
 	        {
+	        	//posicion inicio
 	            ClearChatbox(playerid);
 	            gNewbie[playerid]=1; gOoc[playerid] = 0; gNews[playerid] = 0; gFam[playerid] = 0; RulesTime[playerid] = 0; RulesTime[playerid] = 0;
 				SetPlayerPos(playerid, GetPVarFloat(playerid, "rOldX"), GetPVarFloat(playerid, "rOldY"), GetPVarFloat(playerid, "rOldZ"));
