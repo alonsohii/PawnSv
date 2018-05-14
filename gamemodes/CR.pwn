@@ -5485,6 +5485,10 @@ Muertes[playerid] = 0;
 MuerteReciente[playerid] = 0;
 GetPlayerIp(playerid, RegistroIP, 19);
 GetPlayerName(playerid, Nick, MAX_PLAYER_NAME);
+	    printf("OnPlayerConnect pchar Inicio: %d", Info[playerid][pChar]);
+	    printf("OnPlayerConnect Skin Inicio: %d", Info[playerid][pgskin]);
+SetPlayerSkin(playerid, Info[playerid][pgskin]);
+
 for(Codigo = 0; Codigo < 10; Codigo++)
 {
 if(strlen(EntrarIP[Codigo]) < 10)  continue;
@@ -5538,6 +5542,7 @@ EntrarCuenta[0] = Cuenta;
 	SyncPlayerTime(playerid);
 	CrearVelocimetroPlayer(playerid);
  	ShowMenuLogin(playerid);
+ 	SetPlayerSkin(playerid, Info[playerid][pChar]);
  	
 	if(Iter_Count(Player) > MaxPlayersConnected)
 	{
@@ -6724,6 +6729,9 @@ public OnPlayerDisconnect(playerid, reason)
 	Barra[playerid] = -1;
 	}
 	Advertencias[playerid] = 0;
+       SetPlayerSkin(playerid, Info[playerid][pgskin]);
+		    printf("OnPlayerDisconnent pchar Inicio: %d", Info[playerid][pChar]);
+	    printf("OnPlayerDisconnect Skin Inicio: %d", Info[playerid][pgskin]);
 	//************
     if(GetPVarType(playerid, "PlacedBB"))
     {
@@ -6847,7 +6855,7 @@ public OnPlayerDisconnect(playerid, reason)
 		GetPlayerFacingAngle(playerid, Info[playerid][pPos_r]);
 		Info[playerid][pInt] = GetPlayerInterior(playerid);
 		Info[playerid][pVW] = GetPlayerVirtualWorld(playerid);
-		Info[playerid][pChar] = GetPlayerSkin(playerid);
+		//Info[playerid][pChar] = GetPlayerSkin(playerid);
 		if(Info[playerid][pChar] == 0) Info[playerid][pChar] = 299;
 	}
 	else if(GetPVarInt(playerid, "EventToken") == 1)
@@ -7100,6 +7108,8 @@ SetPlayerSpawn(playerid)
 	if(IsPlayerConnected(playerid))
 	{
 	    SetPlayerSkin(playerid, Info[playerid][pChar]);
+	    printf("OnPlayerSpawn pchar Inicio: %d", Info[playerid][pChar]);
+	    printf("OnPlayerSpawn Skin Inicio: %d", Info[playerid][pgskin]);
 		new Float: x, Float: y, Float: z;
 		GetPlayerPos(playerid, x, y, z);
 		if(x == 0.0 && y == 0.0 && z == 0.0)
@@ -7659,6 +7669,7 @@ public OnPlayerSpawn(playerid)
 	SetPlayerSkillLevel(playerid, WEAPONSKILL_PISTOL, 1);
 	SetPlayerSkillLevel(playerid, WEAPONSKILL_MICRO_UZI, 1);
 	SyncPlayerTime(playerid);
+	SetPlayerSkin(playerid, Info[playerid][pgskin]);
 	if(Info[playerid][pTut] == 1)
 	{
 	StopAudioStreamForPlayer(playerid);
