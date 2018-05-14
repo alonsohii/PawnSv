@@ -5542,7 +5542,7 @@ EntrarCuenta[0] = Cuenta;
 	SyncPlayerTime(playerid);
 	CrearVelocimetroPlayer(playerid);
  	ShowMenuLogin(playerid);
- 	SetPlayerSkin(playerid, Info[playerid][pChar]);
+ 	SetPlayerSkin(playerid, Info[playerid][pgskin]);
  	
 	if(Iter_Count(Player) > MaxPlayersConnected)
 	{
@@ -7107,7 +7107,7 @@ SetPlayerSpawn(playerid)
 {
 	if(IsPlayerConnected(playerid))
 	{
-	    SetPlayerSkin(playerid, Info[playerid][pChar]);
+	    SetPlayerSkin(playerid, Info[playerid][pgskin]);
 	    printf("OnPlayerSpawn pchar Inicio: %d", Info[playerid][pChar]);
 	    printf("OnPlayerSpawn Skin Inicio: %d", Info[playerid][pgskin]);
 		new Float: x, Float: y, Float: z;
@@ -12408,7 +12408,7 @@ LeavePaintballArena(playerid)
     Info[playerid][pDeaths] = 0;
 	SetPlayerWeapons(playerid);
   	SetPlayerColor(playerid,TEAM_HIT_COLOR);
-  	SetPlayerSkin(playerid, Info[playerid][pChar]);
+  	SetPlayerSkin(playerid, Info[playerid][pgskin]);
     LoadObjects(playerid);
 	SetPVarInt(playerid, "ArenaMode", 0);
 	SetPVarInt(playerid, "IsInArena", 0);
@@ -12451,7 +12451,7 @@ PaintballDisconnect(playerid)
     }
 	Info[playerid][pKills] = 0;
     Info[playerid][pDeaths] = 0;
-  	SetPlayerSkin(playerid, Info[playerid][pChar]);
+  	SetPlayerSkin(playerid, Info[playerid][pgskin]);
 	SetPlayerPos(playerid, GetPVarFloat(playerid, "pbOldX"), GetPVarFloat(playerid, "pbOldY"), GetPVarFloat(playerid, "pbOldZ"));
 	SetHP(playerid, GetPVarFloat(playerid, "pbOldHealth"));
 	SetPlayerArmour(playerid, GetPVarFloat(playerid, "pbOldArmor"));
@@ -14962,7 +14962,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		        }
 		        case 2:
 				{
-				    Skin(playerid, Info[playerid][pChar]);
+				    Skin(playerid, Info[playerid][pgskin]);
 			        GivePlayerValidWeapon(playerid, 24);
 				    format(string, sizeof(string), "* %s se viste con ropa normal.", sendername);
 				    ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
@@ -15020,7 +15020,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	            	}
 		            case 6:
 		            {
-	    	            SetPlayerSkin(playerid, Info[playerid][pChar]);
+	    	            SetPlayerSkin(playerid, Info[playerid][pgskin]);
 	    	            SetHP(playerid, 100);
 	        	        format(string, sizeof(string), "* %s se viste con su ropa normal.", GetPlayerNameEx(playerid));
 						ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
@@ -15066,7 +15066,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		        }
 		        case 3:
 				{
-				    SetPlayerSkin(playerid, Info[playerid][pChar]);
+				    SetPlayerSkin(playerid, Info[playerid][pgskin]);
 				    SetHP(playerid, 100);
 				    format(string, sizeof(string), "* %s se viste con ropa normal.", sendername);
 				    ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
@@ -15139,7 +15139,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		        }
 		        case 8:
 				{
-				    SetPlayerSkin(playerid, Info[playerid][pChar]);
+				    SetPlayerSkin(playerid, Info[playerid][pgskin]);
 				    format(string, sizeof(string), "* %s se viste con ropa normal.", sendername);
 				    ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 				}
@@ -15421,7 +15421,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					ResetPlayerWeaponsEx(playerid);
 					SetPlayerColor(playerid, TEAM_HIT_COLOR);
 					SetPlayerArmour(playerid, 0.0);
-					SetPlayerSkin(playerid, Info[playerid][pChar]);
+					SetPlayerSkin(playerid, Info[playerid][pgskin]);
 					OnDuty[playerid] = 0;
 				}
 			}
@@ -16029,7 +16029,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				}
 				else{
 					SendClientMessageEx(playerid, COLOR_YELLOW, "VIP: Te cambiaste tu skin en los lockers VIP.");
-					Info[playerid][pChar] = skinid;
+					Info[playerid][pgskin] = skinid;
 					SetPlayerSkin(playerid, skinid);
 				}
   			}
@@ -16329,7 +16329,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 						SetPlayerColor(playerid, TEAM_HIT_COLOR);
 						SetPlayerArmour(playerid, 0.0);
-						SetPlayerSkin(playerid, Info[playerid][pChar]);
+						SetPlayerSkin(playerid, Info[playerid][pgskin]);
 						OnDuty[playerid] = 0;
 					}
 				}
@@ -16545,7 +16545,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
 						format(string, sizeof(string), "* Agente %s deja su placa y su arma en su casillero.", GetPlayerNameEx(playerid));
 						ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-						SetPlayerSkin(playerid, Info[playerid][pChar]);
+						SetPlayerSkin(playerid, Info[playerid][pgskin]);
 						SetPlayerArmour(playerid, 0.0);
 						OnDuty[playerid] = 0;
 					}
@@ -16694,7 +16694,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(!IsPublicSkin(skinid)) return SafeDialogEx(playerid, FDUTYMENU4, DIALOG_STYLE_INPUT, "{00F70C}Encubierto","Skin inválido. Escoge otro.", "Seleccionar", "Cancelar");
 				Info[playerid][pChar] = skinid;
 				Info[playerid][pModel] = skinid;
-				SetPlayerSkin(playerid, Info[playerid][pChar]);
+				SetPlayerSkin(playerid, Info[playerid][pgskin]);
 			}
 		}
 		case DIALOG_LOADTRUCK: // TRUCKER JOB LOAD TRUCK
@@ -17842,7 +17842,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	   	        if(CheckMoney(playerid,200))
 				{
 	                Info[playerid][pChar] = skinid;
-	                SetPlayerSkin(playerid, Info[playerid][pChar]);
+	                Info[playerid][pgskin] = skinid;
+	                SetPlayerSkin(playerid, Info[playerid][pgskin]);
 	                businessVariables[businessID][bVault] += 20;
 					SaveVarBusiness(1,businessID, "Vault",businessVariables[businessID][bVault]);
 	                Bought(playerid, 200);
@@ -19515,7 +19516,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					case 4:
 					{
 								if(OnDuty[playerid] == 1) {	SendClientMessageEx(playerid, COLOR_GRAD2, "{A2DC35}[INFO]:{FFFFFF} Estás en labor, termina tu turno."); return 1;    }
-								SetPlayerSkin(playerid, Info[playerid][pChar]);
+								SetPlayerSkin(playerid, Info[playerid][pgskin]);
 								Medics -= 1;
 								format(string, sizeof(string), "* %s se viste con ropa normal", sendername);
 								ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
@@ -20232,7 +20233,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			{
    				Info[playerid][pSex] = 1;
 		        Skin(playerid, NOOB_SKIN);
-		        Info[playerid][pChar] = NOOB_SKIN;
+		        Info[playerid][pgskin] = NOOB_SKIN;
 				format(string, sizeof(string), "{FFFFFF}Bien, gracias entonces tu:\n te llamas %s, y eres Hombre.\n\nAhora necesitamos saber tu edad.\n", GetPlayerNameEx(playerid));
 		        SafeDialogEx(playerid, REG_AGE, DIALOG_STYLE_INPUT, "{00F70C}Segundo paso",string, "OK", "Atrás");
 		    }
@@ -20240,7 +20241,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			{
 				Info[playerid][pSex] = 2;
 				Skin(playerid, 93);
-				Info[playerid][pChar] = 93;
+				Info[playerid][pgskin] = 93;
 				format(string, sizeof(string), "{FFFFFF}Bien, gracias entonces tu:\n te llamas %s, y eres Hombre.\n\nAhora necesitamos saber tu edad.\nPon la edad que quieres que sea tu personaje.", GetPlayerNameEx(playerid));
 		        SafeDialogEx(playerid, REG_AGE, DIALOG_STYLE_INPUT, "{00F70C}Segundo paso",string, "OK", "Atrás");
 			}
@@ -22046,7 +22047,7 @@ command(desbug, playerid, params[]){
 		if(Info[playerid][pAdminZC] >= 2)
 		{
 		SetPlayerColor(playerid, COLOR_WHITE);
-        SetPlayerSkin(playerid, Info[playerid][pChar]);
+        SetPlayerSkin(playerid, Info[playerid][pgskin]);
 		SetPlayerArmour(playerid, 100);
 	    SetHP(playerid, 100);
         papilla[playerid]= 0;
@@ -27227,7 +27228,10 @@ command(ayudantes, playerid, params[])
 			    if(skin > 311 || skin < 0) return SendClientMessageEx(playerid, COLOR_WHITE, "Skin ID incorrecto (0-299)");
 			    new string[128];
 			    Info[giveplayerid][pChar] = skin;
+			    Info[giveplayerid][pgskin] = skin;
+			    
 			    SetPlayerSkin(giveplayerid, Info[giveplayerid][pChar]);
+			    SetPlayerSkin(giveplayerid, Info[giveplayerid][pgskin]);
 			    format(string, sizeof(string), "[AdmCmdExe]: %s te cambió el skin, ID SKIN: %d.", GetPlayerNameEx(playerid), skin);
 				SendClientMessageEx(giveplayerid, COLOR_WHITE, string);
 				format(string, sizeof(string), "[AdmCmdExe]: %s cambió el skin de %s.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
@@ -48915,9 +48919,9 @@ function Tutorial_Inside(i) // Tutorial optimizado
 					InterpolateCameraLookAt(i, 1493.268798, -1317.491088, 251.395065, 1129.467407, -1223.885742, 50.495288, 3000);
 					SetPlayerPos(i,1562.3813,-1352.0999,317.3438);
 					format(string, sizeof(string), 		"~w~Este es nuestro grupo de Staff, que hace que el servidor funcione~n~~n~\
-														 | ~y~Scripter: ~w~-iShoters.~n~\
-														 | ~y~Encargados: ~w~-iShoters~n~\
-														 | ~y~Mappers: ~w~ Buscamos~n~\
+														 | ~y~Scripter: ~w~-Alonso Hernandez.~n~\
+														 | ~y~Encargados: ~w~-Alonso Hernandez y Alejandro Salvo~n~\
+														 | ~y~Mappers: ~w~ Alejandro Salvo~n~\
 														 | ~y~Sistemas Base: ~r~ Californias-RP 1.0 // Actividad RP 2.1~n~");
 
 					TextDrawSetString(TextTut[i], string);
@@ -48945,6 +48949,7 @@ function Tutorial_Inside(i) // Tutorial optimizado
 		           	SendClientMessageEx(i, COLOR_LIGHTBLUE, "Puedes usar /ayuda para informarte acerca de los comandos del servidor.");
 		           	SendClientMessageEx(i, COLOR_ORANGE,    "En nuestro servidor, se le otogar stats a los recién registrado, usa /recibirstats para recibirlos.");
 		           	SendClientMessageEx(i, COLOR_ORANGE,    "Recuerda que para encontrar un trabajo, puedes usar ( /buscartrabajo )");
+		           	SendClientMessageEx(i, COLOR_LIGHTBLUE,  "Unete al Grupo de Facebook (CaliforniasRP SAMP Server) se requiere para ser SAPD");
               		Info[i][pWRestricted] = 2;
                     Info[i][pTut] = 1;
 	    		    Info[i][pLevel] = 0;
@@ -50764,7 +50769,7 @@ timer severTimers2[1000]()
 					PhoneOnline[i] = 0;
 					SendClientMessageEx(i, COLOR_GREEN,"Has pagado tu condena.");
 					GameTextForPlayer(i, "~g~Eres Libre~n~~w~Se mejor persona.", 5000, 1);
-					SetPlayerSkin(i, Info[i][pChar]);
+					SetPlayerSkin(i, Info[i][pgskin]);
 					SetPlayerToTeamColor(i);
 				}
 			}
@@ -51829,7 +51834,7 @@ function ShowDNIFalse(playerid,giveplayerid)
 		format(string, sizeof(string), "%s", otext);
 		PlayerTextDrawSetString(giveplayerid,DNI11[giveplayerid], string);
 
-   		PlayerTextDrawSetPreviewModel(giveplayerid,DNI12[giveplayerid], Info[playerid][pChar]);
+   		PlayerTextDrawSetPreviewModel(giveplayerid,DNI12[giveplayerid], Info[playerid][pgskin]);
 
 		PlayerTextDrawShow(giveplayerid, DNI0[giveplayerid]);
 		PlayerTextDrawShow(giveplayerid, DNI1[giveplayerid]);
